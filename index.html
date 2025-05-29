@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Tasks</title>
+  <meta charset="UTF-8">
+  <title>JS TASKS</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f8;
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-link {
+      display: block;
+      width: 250px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: #333;
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .card-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-    <a href="index1.html"></a>
-    <a href="index2.html"></a>
-    <a href="index3.html"></a>
-    <a href="index4.html"></a>
+  <a href="index1.html" class="card-link">REVIEW COROUSEL</a>
+  <a href="index2.html" class="card-link">SIMPLE NAVBAR TOGGLE</a>
+  <a href="index3.html" class="card-link">RESPONSIVE SIDEBAR MENU</a>
+  <a href="index4.html" class="card-link">COLOR CHANGER</a>
+
 </body>
 </html>
