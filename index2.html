@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Navbar Toggle</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f5fafd;
+    }
+    #nav {
+      background: #222;
+      color: #fff;
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #links {
+      display: none;
+      background: #333;
+      padding: 10px;
+    }
+    #links a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      margin: 6px 0;
+    }
+    #links.show {
+      display: block;
+    }
+    #btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav">
+    <div>MyApp</div>
+    <button id="btn" onclick="toggleMenu()">☰</button>
+  </div>
+  <div id="links">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("links");
+      menu.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
