@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Reviews Carousel</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #e0f7fa;
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+    #box {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 8px #aaa;
+    }
+    #review {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    button {
+      margin: 0 8px;
+      padding: 6px 14px;
+      border: none;
+      background: #0288d1;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #01579b;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <div id="review">Loading...</div>
+    <button onclick="prev()">Prev</button>
+    <button onclick="next()">Next</button>
+  </div>
+
+  <script>
+    // Simple list of reviews
+    var reviews = [
+      "Great product! - Sam",
+      "Very easy to use. - Kim",
+      "Loved the support. - Alex",
+      "Highly recommended! - Lee"
+    ];
+
+    var i = 0; // current review
+
+    function show() {
+      document.getElementById("review").textContent = reviews[i];
+    }
+
+    function prev() {
+      i = (i - 1 + reviews.length) % reviews.length;
+      show();
+    }
+
+    function next() {
+      i = (i + 1) % reviews.length;
+      show();
+    }
+
+    show(); // Show the first review when page loads
+  </script>
+</body>
+</html>
