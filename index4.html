@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+</head>
+<body>
+    <button class="btn">Change Color</button>
+
+    <script>
+        const btn = document.querySelector(".btn");
+        let colors = ["#FF5733", "#33FF57", "#3357FF", "#F1C40F", "#9B59B6"];
+
+        console.log("🎨 Color changer started");
+        console.log("Initial colors:", [...colors]);
+
+        btn.addEventListener("click", () => {
+            if (colors.length === 0) {
+                console.log("✅ All colors used. Process ended.");
+                alert("No more colors left!");
+                return;
+            }
+
+            const index = Math.floor(Math.random() * colors.length);
+            const selectedColor = colors[index];
+
+            document.body.style.backgroundColor = selectedColor;
+
+            // Log the selected color
+            console.log(`🟢 Selected and removed color: ${selectedColor}`);
+
+            // Remove it from the array
+            colors.splice(index, 1);
+
+            // Log the remaining colors
+            if (colors.length > 0) {
+                console.log("🗂️ Remaining colors:", [...colors]);
+            } else {
+                console.log("🛑 No colors left. All done!");
+            }
+        });
+    </script>
+</body>
+</html>
