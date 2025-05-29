@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Sidebar Menu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1001;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      font-size: 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .menu-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #222;
+      color: white;
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      color: #00d1b2;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #ddd;
+      text-decoration: none;
+      margin: 15px 0;
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+
+    .sidebar a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 500px) {
+      .sidebar {
+        width: 200px;
+      }
+
+      .menu-btn {
+        padding: 8px 12px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="menu-btn" onclick="toggleSidebar()">☰ Menu</button>
+
+  <div class="sidebar" id="sidebar">
+    <h2>-----</h2>
+    <a href="#">Dashboard</a>
+    <a href="#">Profile</a>
+    <a href="#">Messages</a>
+    <a href="#">Settings</a>
+    <a href="#">Logout</a>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>
